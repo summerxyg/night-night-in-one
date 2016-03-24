@@ -100,6 +100,7 @@ public class JAXWSClientTest {
         // 6. 调用
         SOAPMessage outputMessage = dispatch.invoke(inputMessage);
 
+        // 7. 解析SOAPMessage
         JAXBContext jaxbContext = JAXBContext.newInstance(expectClazz);
         Document outputDocument = outputMessage.getSOAPBody().getOwnerDocument();
         Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
