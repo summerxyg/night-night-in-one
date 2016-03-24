@@ -69,12 +69,12 @@ public class JAXWSClientTest {
         SOAPEnvelope envelope = part.getEnvelope();
         // 5.1 组装SOAPBody
         SOAPBody body = envelope.getBody();
-        // @RequestWrapper
-        SOAPElement servElem = body.addBodyElement(new QName(NAMESPACE, "Service", "lms"));
+        // see @RequestWrapper
+        SOAPElement requestWrapper = body.addBodyElement(new QName(NAMESPACE, "Service", "lms"));
         // 5.2 服务名
-        servElem.addChildElement("ServiceName").setValue(serviceName);
+        requestWrapper.addChildElement("ServiceName").setValue(serviceName);
         // 5.3 Payload
-        SOAPElement payloadElem = servElem.addChildElement("Payload");
+        SOAPElement payloadElem = requestWrapper.addChildElement("Payload");
         if (payload != null) {
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
             dbf.setNamespaceAware(true);
@@ -103,9 +103,9 @@ public class JAXWSClientTest {
         JAXBContext jaxbContext = JAXBContext.newInstance(expectClazz);
         Document outputDocument = outputMessage.getSOAPBody().getOwnerDocument();
         Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
-        // @ResponseWrapper
-        final Node resultNode = outputDocument.getElementsByTagName("Result").item(0);
-        final JAXBElement<OUT> jaxbOutputObject = unmarshaller.unmarshal(resultNode, expectClazz);
+        // see @ResponseWrapper
+        final Node responseWrapper = outputDocument.getElementsByTagName("Result").item(0);
+        final JAXBElement<OUT> jaxbOutputObject = unmarshaller.unmarshal(responseWrapper, expectClazz);
         return jaxbOutputObject.getValue();
     }
 }
