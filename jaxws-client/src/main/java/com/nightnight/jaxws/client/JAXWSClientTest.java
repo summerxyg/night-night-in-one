@@ -30,9 +30,9 @@ import org.w3c.dom.Node;
 
 public class JAXWSClientTest {
 
-    public static final String WSDL_URL = "http://uwlmsng.caaccargo.com/lms-ws/WSGateway?wsdl";
+    public static final String WSDL_URL = "http://*******.*********.***/lms-ws/WSGateway?wsdl";
 
-    public static final String ENDPOINT_ADDRESS = "http://uwlmsng.caaccargo.com/lms-ws/WSGateway";
+    public static final String ENDPOINT_ADDRESS = "http://*******.*********.***/lms-ws/WSGateway";
 
     public static final String NAMESPACE = "http://www.unisys.com/transportation/lms";
 
