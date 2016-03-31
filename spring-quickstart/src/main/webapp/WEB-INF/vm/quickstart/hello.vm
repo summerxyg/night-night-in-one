@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<head>
+<title>Hello $name</title>
+<style type="text/css">
+</style>
+<script type="text/javascript">
+</script>
+</head>
+<body>
+	Hello $name.
+	
+	<br/><br/>
+	by velocity
+</body>
+</html>

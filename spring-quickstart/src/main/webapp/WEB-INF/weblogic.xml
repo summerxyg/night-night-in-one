@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE weblogic-web-app PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/2002/xmlspec/dtd/2.10/xmlspec.dtd">
+<weblogic-web-app xmlns="http://www.bea.com/ns/weblogic/90">
+	<session-descriptor>
+		<cookie-path>/spring-quickstart</cookie-path>
+	</session-descriptor>
+	<container-descriptor>
+		<prefer-web-inf-classes>true</prefer-web-inf-classes>
+	</container-descriptor>
+	<context-root>spring-quickstart</context-root>
+</weblogic-web-app>
